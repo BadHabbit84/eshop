@@ -49,7 +49,7 @@
             </form>
           </div>
         </nav>
-        <div class="app">
+        <div id="app">
 
             @yield('content')
             
