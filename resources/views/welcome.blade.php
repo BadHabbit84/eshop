@@ -28,7 +28,22 @@
         </aside>
     </div>
     <div class="col-md-8 mt-3">
-        Products goes here
+        @if($all_products)
+            @foreach($all_products as $product)
+                <div class="col-md-2">
+                    <div class="card">
+                        IMG
+                        <div class="card-body">
+                            <div class="card-title"> 
+                                <h4>{{$product->product_name}}</h4>
+                            </div>
+                        </div> 
+                    </div>   
+                </div>
+            @endforeach
+        @else
+        Nothing to display
+        @endif
     </div>
     <div class="col-md-2 text-center mt-3">
         right sidebar

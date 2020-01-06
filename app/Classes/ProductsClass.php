@@ -6,14 +6,16 @@ use App\Products;
 
 class ProductsClass {
 
-	public function getAllProducts($string) {
+	public function getAllProducts() {
 
 		
-		echo $string;
 		$products = Products::all();
 
-    	print_r($products);
+    	if (is_object($products)) {
+    		return $products;
+    	}    	
 
-    	exit;
+    	// fallback(there are no products)
+    	return false;
 	}
 }

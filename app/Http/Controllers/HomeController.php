@@ -4,27 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Products;
-use App\Classes\ProductsClass as Prods;
+use App\Classes\ProductsClass as Products;
 
 class HomeController extends Controller
 {
-    public function index(Prods $prods) {
+    public function index() {
 
+    	// get all products
+    	$products = new Products();
+    	
+    	$all_products = $products->getAllProducts();    	
 
     	
-
-    	$prods->getAllProducts('8989');
-
-
-
-
-
-    	$products = Products::all();
-
-    	print_r($products);
-
-    	exit;
-    	return view('welcome');
+    	return view('welcome', compact('all_products'));
     }
 }
