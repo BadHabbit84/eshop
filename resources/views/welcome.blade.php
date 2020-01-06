@@ -27,8 +27,11 @@
             </nav>
         </aside>
     </div>
-    <div class="col-md-10 mt-3">
+    <div class="col-md-8 mt-3">
         Products goes here
+    </div>
+    <div class="col-md-2 text-center mt-3">
+        right sidebar
     </div>
 </div>
 
