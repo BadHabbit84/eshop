@@ -29,10 +29,11 @@
     </div>
     <div class="col-md-8 mt-3">
         @if($all_products)
+        <div class="row">
             @foreach($all_products as $product)
-                <div class="col-md-2">
+                <div class="col-md-3 mb-3" style="max-height: 490px; max-width: 250px ">
                     <div class="card">
-                        IMG
+                        <img src="{{ asset('product-images/'.$product->id.'/table.jpeg') }}">
                         <div class="card-body">
                             <div class="card-title"> 
                                 <h4>{{$product->product_name}}</h4>
@@ -41,6 +42,7 @@
                     </div>   
                 </div>
             @endforeach
+        </div>
         @else
         Nothing to display
         @endif
