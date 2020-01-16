@@ -8,14 +8,28 @@ use App\Classes\ProductsClass as Products;
 
 class HomeController extends Controller
 {
-    public function index() {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        //$this->middleware('auth');
+    }
 
-    	// get all products
-    	$products = new Products();
-    	
-    	$all_products = $products->getAllProducts();    	
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
+    {
+        
+    	// get all products    	
+    	$all_products = Products::all();  
 
-    	
-    	return view('welcome', compact('all_products'));
+
+        return view('welcome', compact('all_products'));
     }
 }

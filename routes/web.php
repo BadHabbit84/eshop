@@ -14,3 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('upload', 'UploadController@index');
 Route::post('store', 'UploadController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
