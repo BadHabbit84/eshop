@@ -57,6 +57,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ url('my-items') }}">My items</a>
+                                    <a class="dropdown-item" href="{{ url('my-details') }}">My details</a>
+                                    <a class="dropdown-item" href="{{ url('my-messages') }}">Messages</a>
+                                    <a class="dropdown-item" href="{{ url('my-notifications') }}">Notifications</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -75,9 +79,15 @@
             </div>
         </nav>
 
+        <div>
+            @yield('links')
+        </div>
+
         <main class="py-4">
             @yield('content')
         </main>
+
+       
     </div>
 </body>
 </html>

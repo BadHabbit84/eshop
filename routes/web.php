@@ -12,9 +12,13 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('upload', 'UploadController@index');
-Route::post('store', 'UploadController@store');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function() {
+	Route::get('upload', 'UploadController@index');
+	Route::get('upload-finish', 'UploadController@uploaded')->name('upload-finish');
+	Route::post('store', 'UploadController@store');
+	Route::get('my-items', 'UserController@myItems')->name('my-items');
+	Route::get('my-items/{id}', 'UserController@checkItem');
+});

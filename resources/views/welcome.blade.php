@@ -27,16 +27,19 @@
             </nav>
         </aside>
     </div>
-    <div class="col-md-8 mt-3">
-        @if($all_products)
+    <div class="col-md-8 mt-3">       
+        @if(count($all_products) > 0)
         <div class="row">
-            @foreach($all_products as $product)
-                <div class="col-md-3 mb-3" style="max-height: 490px; max-width: 250px ">
+            @foreach($all_products as $item)
+                <div class="col-md-3 mb-3">
                     <div class="card">
-                        <img src="{{ asset('product-images/'.$product->id.'/table.jpeg') }}">
+                        <img src="{{ asset('product-images/'.$item->id.'/table.jpeg') }}" class="img-fluid">
                         <div class="card-body">
                             <div class="card-title"> 
-                                <h4>{{$product->product_name}}</h4>
+                                <h4>{{$item->item_name}}</h4>
+                            </div>
+                            <div class="card-body>">
+                                {{$item->item_price}}
                             </div>
                         </div> 
                     </div>   
@@ -44,7 +47,7 @@
             @endforeach
         </div>
         @else
-        Nothing to display
+            Nothing to display
         @endif
     </div>
     <div class="col-md-2 text-center mt-3">

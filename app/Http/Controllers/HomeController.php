@@ -29,6 +29,7 @@ class HomeController extends Controller
     	// get all products    	
     	$all_products = Products::all();  
 
+        
 
         return view('welcome', compact('all_products'));
     }
